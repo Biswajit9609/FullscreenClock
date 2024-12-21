@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Time</title>
+  <style>
+    @font-face {
+        font-family: 'digital';
+        src: url(digital.ttf);
+    }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: rgb(21, 19, 19);
+    }
+
+    .clock {
+      font-size: 12rem;
+      color: #bebebe;
+      font-family: 'digital';
+    }
+  </style>
+</head>
+<body>
+  <div class="clock" id="liveClock">Loading...</div>
+
+  <script>
+    function updateTime() {
+      const clockElement = document.getElementById('liveClock');
+      const now = new Date();
+      clockElement.textContent = now.toLocaleTimeString();
+    }
+
+    // Update time every second
+    setInterval(updateTime, 1000);
+
+    // Initialize time immediately
+    updateTime();
+  </script>
+</body>
+</html>
