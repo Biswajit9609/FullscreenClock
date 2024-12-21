@@ -35,11 +35,7 @@
       const now = new Date();
       clockElement.textContent = now.toLocaleTimeString();
     }
-
-    // Update time every second
     setInterval(updateTime, 1000);
-
-    // Initialize time immediately
     updateTime();
   </script>
 </body>
