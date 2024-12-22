@@ -33,9 +33,14 @@
     function updateTime() {
       const clockElement = document.getElementById('liveClock');
       const now = new Date();
-      clockElement.textContent = now.toLocaleTimeString();
+      const timeString = now.toLocaleTimeString();
+
+      // Update only if the time string has changed to prevent unnecessary reflows
+      if (clockElement.textContent !== timeString) {
+        clockElement.textContent = timeString;
+      }
+      requestAnimationFrame(updateTime);
     }
-    setInterval(updateTime, 1000);
     updateTime();
   </script>
 </body>
