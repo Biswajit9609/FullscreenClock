@@ -20,9 +20,29 @@
     }
 
     .clock {
-      font-size: 12rem;
+      font-family: 'digital', Arial, sans-serif;
       color: #bebebe;
-      font-family: 'digital';
+      text-align: center;
+      font-size: 16vw; /* Responsive font size */
+      line-height: 1.2;
+      padding: 20px;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1000px; /* Maximum width for larger screens */
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 600px) {
+      .clock {
+        font-size: 20vw; /* Larger font size for smaller screens */
+      }
+    }
+
+    /* Media query for larger screens */
+    @media (min-width: 1200px) {
+      .clock {
+        font-size: 192px; /* Fixed size for very large screens */
+      }
     }
   </style>
 </head>
